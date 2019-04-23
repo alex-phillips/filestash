@@ -40,14 +40,15 @@ function encode_path(path){
 export function prepare(path){
     // to send our url correctly without using directly '/'
     console.log(path)
+    let decoded = '';
     try {
-        path = decodeURIComponent(path);
+        decoded = decodeURIComponent(path);
     } catch (e) {
         console.log(e)
-        path = decodeURIComponent(path.replace('%', '%25'));
+        decoded = decodeURIComponent(path.replace('%', '%25'));
     }
 
-    return encodeURIComponent(path)
+    return encodeURIComponent(decoded)
 }
 
 export function urlParams() {

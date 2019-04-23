@@ -45,7 +45,7 @@ export function prepare(path){
         decoded = decodeURIComponent(path);
     } catch (e) {
         console.log(e)
-        decoded = decodeURIComponent(path.replace('%', '%25'));
+        decoded = decodeURIComponent(path.replace(/%/g, '%25'));
     }
 
     return encodeURIComponent(decoded)

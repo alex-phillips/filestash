@@ -38,7 +38,12 @@ function encode_path(path){
 }
 
 export function prepare(path){
-    return encodeURIComponent(decodeURIComponent(path)); // to send our url correctly without using directly '/'
+    console.log(path)
+    try {
+        return encodeURIComponent(decodeURIComponent(path)); // to send our url correctly without using directly '/'
+    } catch (e) {
+        return path;
+    }
 }
 
 export function urlParams() {

@@ -39,9 +39,11 @@ function encode_path(path){
 
 export function prepare(path){
     // to send our url correctly without using directly '/'
+    console.log(path)
     try {
         path = decodeURIComponent(path);
     } catch (e) {
+        console.log(e)
         path = decodeURIComponent(path.replace('%', '%25'));
     }
 

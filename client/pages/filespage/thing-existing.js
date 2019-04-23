@@ -212,7 +212,8 @@ export class ExistingThing extends React.Component {
         }
         className = className.trim();
 
-        let encodedLink = this.props.file.link.split('/').map(val => encodeURIComponent(val)).join('/')
+        let encodedLink = this.props.file.link.split('/').map(val => encodeURIComponent(val)).join('/');
+        console.log(encodedLink);
 
         return connectDragSource(connectDropNativeFile(connectDropFile(
             <div className={"component_thing view-"+this.props.view}>
